@@ -29,6 +29,7 @@ angular.module('NE', []).service('NorthEast', ['$window', '$rootScope', function
 	NorthEast.addDimension = function (name, size) {
 		if (typeof name === string && Number.isNaN(name.substring(0, 1)) && !Number.isNaN(size)) {
 			$rootScope.dimensions[name] = size;
+			Northeast[name] = NorthEast.dimensional(name);
 		} else {
 			console.log('NE: Invalid dimension provided: '+ String.toString(name));
 		}
