@@ -1,0 +1,37 @@
+<!doctype HTML>
+<html ng-app="TestApp">
+<head>
+  <title>Test</title>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="NorthEast.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="bower_components/xx/dist/xx.min.css"></link>
+
+  <script>
+    angular.module('TestApp', ['NE'])
+      .controller('BaseController', function ($scope, $rootScope, NorthEast) {
+        $scope.ne = NorthEast;
+      });
+  </script>
+  <style type="text/css">
+    body {
+      font-size: 15px;
+      font-weight: 10px;
+    }
+    div {
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .blueBG { background-color: #679ef7; }
+    .redBG { background-color: #d61d1d; color: white; }
+    .greenBG { background-color: #119b54; }
+  </style>
+</head>
+<body ng-controller="BaseController">
+  <div class="blueBG bloc" ng-style="{'height': '150px'}">150px Tall Header</div>
+  <div class="redBG inbloc fl" ng-style="{'height': ne.y.get(150), 'width': ne.x.divide(2)}">Half-width, full height with offset of 150px.</div>
+  <div class="greenBG inbloc fr" ng-style="{'height': ne.y.get(150), 'width': ne.x.divide(2)}">Half-width, full height with offset of 150px.</div>
+</body>
+</html>
