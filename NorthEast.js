@@ -17,10 +17,10 @@ angular.module('NE', []).service('NorthEast', ['$window', '$rootScope', function
 		y: $window.innerHeight
 	};
 
-	angular.element(window).on('resize', function(){
-		$rootScope.apply(function () {
-			$rootScope.dimensions.x = $window.innerWidth;
+	angular.element(window).on('resize', function () {
+		$rootScope.$apply(function () {
 			$rootScope.dimensions.y = $window.innerHeight;
+			$rootScope.dimensions.x = $(document).innerWidth();
 		});
 	})
 
