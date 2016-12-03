@@ -1,4 +1,4 @@
-# NorthEast
+![NorthEast Logo](http://austinbillings.com/projects/NorthEast.png)
 
 Angular Viewport magic by Austin for free.
 
